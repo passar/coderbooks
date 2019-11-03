@@ -3,6 +3,7 @@ sudo pacman -S vim
 
 # oh my zsh
 sudo pacman -S zsh
+sudo pacman -S zsh-completions
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # få igång bluetooth
@@ -19,3 +20,7 @@ sudo pacman -Rs kalu
 # ranka mirrors
 rankmirrors /etc/pacman.d/mirrorlist > mirrors
 sudo mv mirrors /etc/pacman.d/mirrorlist 
+
+# ändra till en rad för att inte bråka med c-a-pil upp och ner
+#      <property name="rows" type="uint" value="1"/>
+# .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
