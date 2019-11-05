@@ -13,9 +13,23 @@ systemctl status bluetooth.service
 
 # ta bort packmanwrapern kalu
 sudo pacman -Rs kalu
+
+### manjaro har en störig meny för terminalen
+# behöver ändra i filen nedan till följande rad
+# ./.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+#  <property name="&lt;Primary&gt;&lt;Alt&gt;t" type="string" value="xfce4-terminal"/>
+# cat ./.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml | grep terminal
+
+
 # stäng av varning för att klistra in i terminalen
+# fixade det manuellt i menyn men det borde finnas en fil att ändra i.
+# det var xfce-terminal
+# vim .config/xfce4/terminal/terminalrc 
+# det är i filen ovan som man gör ändringar
+# egrep safe .config/xfce4/terminal/terminalrc
 
 # fixa klockan genom ntp och falsk hårdvaruklocka
+
 
 # ranka mirrors
 rankmirrors /etc/pacman.d/mirrorlist > mirrors
