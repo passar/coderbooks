@@ -1,11 +1,16 @@
 # fixa klockan innan allt annat
+# chromebooksen saknar batetri så klockan är alltid fel
+# nedan som uppstartskript kanske? eller installera fake-hwclock. Det senare har fungerat bra.
 sudo ntpd -qg
 sudo hwclock --systohc
 
-## Nu är det ju rörigt med att nå ett smidigt sätt att hämta yay eller annan aur pakethanterare och installera den snyggt varje gång för all framtid.
-## Först behövre yay eller annan pakethanterare som kan hantera. Eller så kör jag den som unikt program.
+## en aurpakethanterare
 
+## isnstallera 
 yay fake-hwclock-git
+
+sudo systemctl enable fake-hwclock.service
+sudo systemctl start fake-hwclock.service
 
 # installera vim
 sudo pacman -S vim
@@ -44,6 +49,6 @@ sudo pacman -Rs kalu
 rankmirrors /etc/pacman.d/mirrorlist > mirrors
 sudo mv mirrors /etc/pacman.d/mirrorlist 
 
-# ändra till en rad för att inte bråka med c-a-pil upp och ner
+  # ändra till en rad för att inte bråka med c-a-pil upp och ner
 #      <property name="rows" type="uint" value="1"/>
 # .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
