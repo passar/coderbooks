@@ -1,3 +1,12 @@
+# fixa klockan innan allt annat
+sudo ntpd -qg
+sudo hwclock --systohc
+
+## Nu är det ju rörigt med att nå ett smidigt sätt att hämta yay eller annan aur pakethanterare och installera den snyggt varje gång för all framtid.
+## Först behövre yay eller annan pakethanterare som kan hantera. Eller så kör jag den som unikt program.
+
+yay fake-hwclock-git
+
 # installera vim
 sudo pacman -S vim
 
